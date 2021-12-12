@@ -1,0 +1,17 @@
+<div *ngIf="contact">
+	<h2>{{contact.fname | uppercase}} {{contact.lname | uppercase }} Details</h2>
+  <div><span>id: </span>{{contact.id}}</div>
+  <div>
+    <label for="contact-fname">First name: </label>
+    <input id="contact-fname" [(ngModel)]="contact.fname" placeholder="First name"/>
+  </div>
+  <div>
+    <label for="contact-lname">Last name: </label>
+    <input id="contact-lname" [(ngModel)]="contact.lname" placeholder="Last name"/>
+  </div>
+  <div>
+    <label for="contact-active">Is Active: </label>
+    <input id="contact-active" [(ngModel)]="contact.active" placeholder="Is active"/>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>
