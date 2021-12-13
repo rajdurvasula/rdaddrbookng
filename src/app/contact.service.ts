@@ -6,11 +6,13 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Contact } from './contact.model';
 import { MessageService } from './message.service';
 
+const contactsUrl = "http://localhost:9080/api/contacts";
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class ContactService {
-	private contactsUrl = '/api/contacts';
 	httpOptions = {
 		headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 	};
@@ -21,7 +23,7 @@ export class ContactService {
 	) { }
 
 	getContacts(): Observable<Contact[]> {
-		return this.http.get<Contact[]>(this.contactsUrl)
+		return this.http.get<Contact[]>(contactsUrl)
 		.pipe(
 			tap(_ => this.log('fetched contacts')),
 				catchError(this.handleError<Contact[]>('getContacts', []))
@@ -29,7 +31,7 @@ export class ContactService {
 	}
 
 	getContact(id: number): Observable<Contact> {
-		const url = `${this.contactsUrl}/${id}`;
+		const url = `${contactsUrl}/${id}`;
 		return this.http.get<Contact>(url)
 		.pipe(
 			tap(_ => this.log(`fetched contact id=${id}`)),
@@ -38,7 +40,7 @@ export class ContactService {
 	}
 
 	addContact(contact: Contact): Observable<Contact> {
-		return this.http.post<Contact>(this.contactsUrl, contact, this.httpOptions)
+		return this.http.post<Contact>(contactsUrl, contact, this.httpOptions)
 		.pipe(
 			tap((newContact: Contact) => this.log(`added contact id=${contact.id}`)),
 				catchError(this.handleError<Contact>('addContact'))

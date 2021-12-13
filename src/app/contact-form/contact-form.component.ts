@@ -9,21 +9,15 @@ import { ContactService } from '../contact.service';
   styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent implements OnInit {
-	contacts: Contact[] = [];
-	contact = new Contact(0,'','',false);
-	submitted = false;
+  contact = new Contact(0, '', '', false);
+
+  submitted = false;
 
   constructor(
 	  private router: Router,
 	  private contactService: ContactService) { }
 
   ngOnInit(): void {
-	  this.getContacts();
-  }
-
-  getContacts(): void {
-	  this.contactService.getContacts()
-	  .subscribe(contacts => this.contacts = contacts);
   }
 
   onSubmit(): void {
@@ -36,8 +30,8 @@ export class ContactFormComponent implements OnInit {
 
   save(): void {
 	  this.contactService.addContact(this.contact)
-	  .subscribe(data => {
-		  this.contacts.push(data);
+	  .subscribe(response => {
+		  console.log(response);
 	  });
 	  this.clearContact();
 	  this.router.navigate(['/dashboard']);

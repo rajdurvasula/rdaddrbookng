@@ -71,7 +71,8 @@
               "browserTarget": "rdaddrbookng:build:production"
             },
             "development": {
-              "browserTarget": "rdaddrbookng:build:development"
+              "browserTarget": "rdaddrbookng:build:development",
+	      "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
