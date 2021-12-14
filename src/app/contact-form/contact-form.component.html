@@ -3,14 +3,15 @@
 	<h2>New Contact</h2>
 	<form (ngSubmit)="onSubmit" #contactForm="ngForm">
 		<div class="form-group">
-			<label for="contact-fname">First name: </label>
-			<input type="text" class="form-control"  id="contact-fname" [(ngModel)]="contact.fname" placeholder="first name"/>
+			<label for="fname">First name: </label>
+			<input type="text" class="form-control"  id="fname" [(ngModel)]="contact.fname" name="fname" #name="ngModel" placeholder="first name"/>
 		</div>
 		<div>
-			<label for="contact-lname">Last name: </label>
-			<input type="text" class="form-control" id="contact-lname" [(ngModel)]="contact.lname" placeholder="last name"/>
+			<label for="lname">Last name: </label>
+			<input type="text" class="form-control" id="lname" [(ngModel)]="contact.lname" name="lname" #name="ngModel" placeholder="last name"/>
 		</div>
 		<button type="submit" class="btn btn-success" [disabled]="!contactForm.form.valid" (click)="save()">Save</button>
+		<button type="submit" class="btn btn-default" (click)="toDashboard()">Dashboard</button>
 	</form>
 	</div>
 </div>

@@ -34,6 +34,10 @@ export class ContactFormComponent implements OnInit {
 		  console.log(response);
 	  });
 	  this.clearContact();
+	  this.submitted = false;
+  }
+
+  toDashboard(): void {
 	  this.router.navigate(['/dashboard']);
   }
 
