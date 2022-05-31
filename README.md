@@ -1,6 +1,6 @@
 # Rdaddrbookng
 
-Simple angular front-end application that works with rdaddrbookbe|(https://github.com/rajdurvasula/rdaddrbookbe)
+Simple angular front-end application that works with [rdaddrbookbe](https://github.com/rajdurvasula/rdaddrbookbe)
 
 ## Instructions
 - Setup **rdaddrbookbe** node project
