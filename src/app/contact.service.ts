@@ -7,7 +7,7 @@ import { Contact } from './contact.model';
 import { MessageService } from './message.service';
 
 //const contactsUrl = "http://localhost:9080/api/contacts";
-const contactsUrl = "http://10.0.0.88:9080/api/contacts";
+const contactsUrl = "http://172.31.29.56:9080/api/contacts";
 
 @Injectable({
   providedIn: 'root'
