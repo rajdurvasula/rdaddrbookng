@@ -11,3 +11,5 @@ Simple angular front-end application that works with [rdaddrbookbe](https://gith
 npm start
 ```
 
+## Test
+- Open http://<public_dns_of_host>:4200/ on web browser
